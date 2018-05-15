@@ -74,6 +74,18 @@
     "jdorn/sql-formatter": {
         "version": "v1.2.17"
     },
+    "mediamonks/rest-api": {
+        "version": "1.0.1"
+    },
+    "mediamonks/rest-api-bundle": {
+        "version": "3.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "master",
+            "version": "3.0",
+            "ref": "794dac5ae364209f19ca7ac82e318b203b14ea70"
+        }
+    },
     "monolog/monolog": {
         "version": "1.23.0"
     },
