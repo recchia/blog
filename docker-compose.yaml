@@ -1,0 +1,45 @@
+version: '3.0'
+
+services:
+    web_server:
+      container_name: blog_nginx
+      image: nginx
+      networks:
+        blog_net:
+          ipv4_address: 172.25.210.10
+      ports:
+        - "8080:80"
+      links:
+        - php_app
+      volumes:
+        - "./:/var/www"
+        - "./.docker/nginx/vhost/sf4_vhost.conf:/etc/nginx/conf.d/030-sf4.conf:ro"
+
+    php_app:
+      container_name: blog_php
+      image: recchia/php-fpm:7.2
+      networks:
+        blog_net:
+          ipv4_address: 172.25.210.11
+      volumes:
+        - "./.docker/php/config/php.ini:/usr/local/etc/php/conf.d/030-custom.ini:ro"
+        - "./:/var/www"
+      working_dir: "/var/www"
+
+    blackfire:
+      container_name: blog_blackfire
+      image: blackfire/blackfire
+      environment:
+          - BLACKFIRE_SERVER_ID
+          - BLACKFIRE_SERVER_TOKEN
+      networks:
+        blog_net:
+          ipv4_address: 172.25.210.13
+
+networks:
+  blog_net:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.25.210.0/24
