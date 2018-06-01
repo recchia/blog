@@ -17,6 +17,8 @@ class PostController extends Controller
 {
     /**
      * @Route("/", name="post_index", methods="GET")
+     * @param PostRepository $postRepository
+     * @return Response
      */
     public function index(PostRepository $postRepository): Response
     {
@@ -25,6 +27,8 @@ class PostController extends Controller
 
     /**
      * @Route("/{id}", name="post_show", methods="GET")
+     * @param Post $post
+     * @return Response
      */
     public function show(Post $post): Response
     {
