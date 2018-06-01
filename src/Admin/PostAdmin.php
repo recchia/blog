@@ -21,7 +21,9 @@ class PostAdmin extends AbstractAdmin
         $form
             ->add('title')
             ->add('body')
-            ->add('tags')
+            ->add('tags', null, [
+                'by_reference' => false
+            ])
         ;
     }
 
