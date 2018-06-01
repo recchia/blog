@@ -34,7 +34,7 @@ class PostAdmin extends AbstractAdmin
 
     protected function configureListFields(ListMapper $list)
     {
-        $list->addIdentifier('title');
+        $list->addIdentifier('title')->add('tags');
     }
 
 }
