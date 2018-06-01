@@ -31,3 +31,9 @@ services:
         tags:
             - { name: sonata.admin, manager_type: orm, label: Post }
         public: true
+
+    App\Admin\TagAdmin:
+        arguments: [~, App\Entity\Tag, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: Tag }
+        public: true

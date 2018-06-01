@@ -2,8 +2,8 @@
 /**
  * Created by PhpStorm.
  * User: ubuntu
- * Date: 16/05/18
- * Time: 00:19
+ * Date: 31/05/18
+ * Time: 20:40
  */
 
 namespace App\Admin;
@@ -14,25 +14,20 @@ use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 
-class PostAdmin extends AbstractAdmin
+class TagAdmin extends AbstractAdmin
 {
     protected function configureFormFields(FormMapper $form)
     {
-        $form
-            ->add('title')
-            ->add('body')
-            ->add('tags')
-        ;
+        $form->add('name');
     }
 
     protected function configureDatagridFilters(DatagridMapper $filter)
     {
-        $filter->add('title');
+        $filter->add('name');
     }
 
     protected function configureListFields(ListMapper $list)
     {
-        $list->addIdentifier('title');
+        $list->addIdentifier('name');
     }
-
 }
