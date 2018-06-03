@@ -23,7 +23,7 @@ class SecurityController extends Controller
             '_username' => $lastUserName
         ]);
 
-        return $this->render('login.html.twig', [
+        return $this->render('security/login.html.twig', [
             'form' => $form->createView(),
             'error' => $error,
         ]);

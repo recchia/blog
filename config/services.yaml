@@ -37,3 +37,7 @@ services:
         tags:
             - { name: sonata.admin, manager_type: orm, label: Tag }
         public: true
+
+    App\Doctrine\HashPasswordSubscriber:
+        tags:
+            - { name: doctrine.event_subscriber }

@@ -26,7 +26,7 @@ class PostController extends Controller
     }
 
     /**
-     * @Route("/{id}", name="post_show", methods="GET")
+     * @Route("/{id}", name="post_show", methods="GET", requirements={"id"="\d+"})
      * @param Post $post
      * @return Response
      */

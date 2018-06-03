@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
@@ -21,6 +22,8 @@ class User implements UserInterface
      * @var string
      *
      * @ORM\Column(type="string", unique=true)
+     * @Assert\NotBlank()
+     * @Assert\Email()
      */
     private $email;
 
@@ -33,6 +36,7 @@ class User implements UserInterface
 
     /**
      * @var string
+     * @Assert\NotBlank(groups={"Registration"})
      */
     private $plainPassword;
 
@@ -51,7 +55,7 @@ class User implements UserInterface
     /**
      * @return string
      */
-    public function getEmail(): string
+    public function getEmail(): ?string
     {
         return $this->email;
     }
@@ -67,7 +71,7 @@ class User implements UserInterface
     /**
      * @return string
      */
-    public function getPlainPassword(): string
+    public function getPlainPassword(): ?string
     {
         return $this->plainPassword;
     }
