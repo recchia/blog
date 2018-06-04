@@ -26,6 +26,13 @@ $ cd blog
 $ docker-compose up -d
 $ docker exec -ti blog_php bash
 $ composer install --prefer-dist
+```
+
+### Frontend Assets
+
+You need Nodejs and Yarn or NPM for install and process assets
+
+```sh
 $ yarn install
 $ yarn run encore production
 ```
