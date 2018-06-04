@@ -4,6 +4,7 @@ MediaMonk
 
 This blog was develop on top of the following tools.
 
+* [Symfony 4](http://symfony.com/) - a set of reusable PHP components
 * [Sonata Admin](https://sonata-project.org/) - A set of several rich open source bundles based on Symfony
 * [Nginx](https://nginx.org/en/) - Nginx [engine x] is an HTTP and reverse proxy server.
 * [PHP-FPM](https://php-fpm.org/) - Alternative PHP FastCGI implementation with additional features useful for sites of any size.
