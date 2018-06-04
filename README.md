@@ -26,6 +26,8 @@ $ cd blog
 $ docker-compose up -d
 $ docker exec -ti blog_php bash
 $ composer install --prefer-dist
+$ yarn install
+$ yarn run encore production
 ```
 
 Next you should browse [http://127.0.0.1:8080](http://127.0.0.1:8080) to see the app running.
